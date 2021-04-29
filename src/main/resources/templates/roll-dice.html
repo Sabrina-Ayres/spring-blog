@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Roll Dice</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="dice" value=""*/-->
+<h1 th:text="${dice}"></h1>
+
+<h1>Guess a number below: </h1>
+
+<form action="/roll-dice" method="post">
+    <button type="submit" name="dice" value="1">1</button>
+</form>
+
+<form action="/roll-dice" method="post">
+    <button type="submit" name="dice" value="2">2</button>
+</form>
+
+<form action="/roll-dice" method="post">
+    <button type="submit" name="dice" value="3">3</button>
+</form>
+
+<form action="/roll-dice" method="post">
+    <button type="submit" name="dice" value="4">4</button>
+</form>
+
+<form action="/roll-dice" method="post">
+    <button type="submit" name="dice" value="5">5</button>
+</form>
+
+<form action="/roll-dice" method="post">
+    <button type="submit" name="dice" value="6">6</button>
+</form>
+
+</body>
+</html>
