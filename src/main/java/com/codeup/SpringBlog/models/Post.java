@@ -1,4 +1,4 @@
-package com.codeup.SpringBlog;
+package com.codeup.SpringBlog.models;
 
 public class Post {
 
