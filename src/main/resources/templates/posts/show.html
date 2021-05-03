@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head th:replace=" partials/head :: head" />
+
+</head>
+<body>
+<nav th:replace=" partials/nav :: nav" />
+
+<h1>Blog</h1>
+<div th:each="post : ${post}">
+    <p th:text="${post.title}" />
+    <p th:text="${post.body}" />
+</div>
+
+<footer th:replace="partials/foot :: foot" />
+
+</body>
+</html>
