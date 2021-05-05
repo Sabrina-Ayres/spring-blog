@@ -10,10 +10,12 @@
 <nav th:replace=" partials/nav :: nav" />
 
 
-<h1>Blog</h1>
+<h1 class="mb-4">Post</h1>
 <div th:each="post : ${posts}">
-    <p th:text="${post.title}" />
+    <h3 th:text="${post.title}" />
     <p th:text="${post.body}" />
+    <a th:href="@{/posts/update/{id}(id=${post.id})}" class="btn">Edit</a>
+    <a th:href="@{/posts/delete/{id}(id=${post.id})}" class="btn">Delete</a>
 </div>
 
 <footer th:replace="partials/foot :: foot" />
