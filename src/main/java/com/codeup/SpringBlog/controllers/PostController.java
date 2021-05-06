@@ -1,6 +1,7 @@
 package com.codeup.SpringBlog.controllers;
 
 import com.codeup.SpringBlog.models.Post;
+import com.codeup.SpringBlog.models.User;
 import com.codeup.SpringBlog.repositories.PostRepository;
 import com.codeup.SpringBlog.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ public class PostController {
         this.userDao = userDao;
     }
 
+
     @GetMapping("/posts")
     public String getAllPosts(Model model) {
         List<Post> posts = postsDao.findAll();
@@ -30,9 +32,11 @@ public class PostController {
 
     @GetMapping("/posts/{id}")
     public String getOnepost(@PathVariable long id, Model model) {
-        Post post = postsDao.getOne(id);
+        Post post = new Post();
+        model.addAttribute("id", id);
         model.addAttribute("post", post);
-        return "posts/show";
+        model.addAttribute("post", postsDao.getOne(id));
+        return "/posts/show";
     }
 
 
