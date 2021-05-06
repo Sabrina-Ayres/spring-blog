@@ -20,9 +20,6 @@ public class PostDetails {
     @Column(length = 255)
     private String topicDescription;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Post post;
-
 
     public PostDetails(long id, boolean isAwesome, String historyOfPost, String topicDescription) {
         this.id = id;

@@ -27,11 +27,19 @@ public class PostController {
 
     @GetMapping("/posts/{id}")
     public String getOnepost(@PathVariable long id, Model model) {
-        Post post = postsDao.getOne(id);
+        Post post = new Post();
+        model.addAttribute("id", id);
         model.addAttribute("post", post);
+        model.addAttribute("post", postsDao.getOne(id));
         return "posts/show";
     }
 
+//    @GetMapping("/posts/{id}")
+//    public String getOnepost(@PathVariable long id, Model model) {
+//        Post post = postsDao.getOne(id);
+//        model.addAttribute("post", post);
+//        return "posts/show";
+//    }
 
     @GetMapping("/posts/create")
     public String createPostForm(Model model) {
@@ -66,5 +74,11 @@ public class PostController {
         return "redirect:/posts";
     }
 
+//    @GetMapping("/posts/{id}/history")
+//    public String showHistoryOfPost(@PathVariable("id") long id, Model model) {
+//        String post = postsDao.getOne(id).getPostDetails().getHistoryOfPost();
+//        model.addAttribute("post", post);
+//        return "posts/{id}/history";
+//    }
 
 }

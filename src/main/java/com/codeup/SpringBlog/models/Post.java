@@ -17,10 +17,20 @@ public class Post {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String body;
 
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private PostDetails postDetails;
+
+
     public Post() {
     }
 
     public Post(String title, String body) {
+        this.title = title;
+        this.body = body;
+    }
+
+    public Post(String title, String body, PostDetails postDetails) {
         this.title = title;
         this.body = body;
     }
@@ -55,4 +65,11 @@ public class Post {
         this.body = body;
     }
 
+    public PostDetails getPostDetails() {
+        return postDetails;
+    }
+
+    public void setPostDetails(PostDetails postDetails) {
+        this.postDetails = postDetails;
+    }
 }

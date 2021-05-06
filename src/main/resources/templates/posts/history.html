@@ -9,11 +9,9 @@
 <body>
 <nav th:replace=" partials/nav :: nav" />
 
-<h1>Blog</h1>
+<h1>Histoy of Post</h1>
 <div>
-    <h3 th:text="${post.title}" />
-    <h5 th:text="${post.postDetails.getHistoryOfPost()}" />
-    <p th:text="${post.body}" />
+    <p th:text="${post.postDetails.historyOfPost}" />
 </div>
 
 <footer th:replace="partials/foot :: foot" />
