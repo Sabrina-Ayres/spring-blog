@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <head th:replace=" partials/head :: head" />
+    <head th:replace=" partials/head :: head"/>
 
 </head>
 <body>
-<nav th:replace=" partials/nav :: nav" />
+<nav th:replace=" partials/nav :: nav"/>
 
 
 <h1 class="mb-4">Post</h1>
 <div th:each="post : ${posts}">
-    <h3 th:text="${post.title}" />
-    <p th:text="${post.body}" />
+    <h3 th:text="${post.title}"/>
+    <p th:text="${post.body}"/>
+    <div th:each="postImage : ${post.postImages}">
+        <img th:href="${postImage.url}">
+    </div>
     <a th:href="@{/posts/update/{id}(id=${post.id})}" class="btn">Edit</a>
     <a th:href="@{/posts/delete/{id}(id=${post.id})}" class="btn">Delete</a>
 </div>
 
-<footer th:replace="partials/foot :: foot" />
+<footer th:replace="partials/foot :: foot"/>
 </body>
 </html>
