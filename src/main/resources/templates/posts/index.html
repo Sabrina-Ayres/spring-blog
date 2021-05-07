@@ -14,7 +14,7 @@
 <div th:each="post : ${posts}">
     <h3 th:text="${post.title}" />
     <p th:text="${post.body}" />
-    <a th:href="@{/posts/update/{id}(id=${post.id})}" class="btn">Edit</a>
+    <a th:href="@{/posts/edit/{id}(id=${post.id})}" class="btn">Edit</a>
     <a th:href="@{/posts/delete/{id}(id=${post.id})}" class="btn">Delete</a>
 </div>
 

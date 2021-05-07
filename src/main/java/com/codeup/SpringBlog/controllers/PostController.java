@@ -1,7 +1,6 @@
 package com.codeup.SpringBlog.controllers;
 
 import com.codeup.SpringBlog.models.Post;
-import com.codeup.SpringBlog.models.User;
 import com.codeup.SpringBlog.repositories.PostRepository;
 import com.codeup.SpringBlog.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
@@ -33,8 +32,8 @@ public class PostController {
     @GetMapping("/posts/{id}")
     public String getOnepost(@PathVariable long id, Model model) {
         Post post = new Post();
-        model.addAttribute("id", id);
-        model.addAttribute("post", post);
+//        model.addAttribute("id", id);
+//        model.addAttribute("post", post);
         model.addAttribute("post", postsDao.getOne(id));
         return "/posts/show";
     }
@@ -52,15 +51,15 @@ public class PostController {
         return "redirect:/posts";
     }
 
-    @GetMapping("/posts/update/{id}")
-    public String updatePostForm(@PathVariable("id") long id, Model model) {
+    @GetMapping("/posts/edit/{id}")
+    public String editPostForm(@PathVariable("id") long id, Model model) {
         Post post = postsDao.getOne(id);
         model.addAttribute("post", post);
-        return "/posts/update";
+        return "posts/edit";
     }
 
-    @PostMapping("/posts/update")
-    public String saveUpdatedPost(@PathVariable("id") long id, @ModelAttribute Post post) {
+    @PostMapping("/posts/edit/{id}")
+    public String saveUpdatedPost(@ModelAttribute Post post) {
         postsDao.save(post);
         return "redirect:/posts";
     }

@@ -13,7 +13,7 @@
 <h1 class="mb-4">Create a new post</h1>
 
 <div>
-    <form action="#" th:action="@{/posts/create}" th:object="${post}" method="post" >
+    <form th:action="@{/posts/create}"  th:method="post" th:object="${post}" >
         <label>Title: </label>
         <input type="text" th:field="*{title}" />
         <label>Body: </label>
