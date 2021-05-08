@@ -15,7 +15,8 @@
     <h3 th:text="${post.title}" />
     <p th:text="${post.body}" />
     <a th:href="@{/posts/edit/{id}(id=${post.id})}" class="btn">Edit</a>
-    <a th:href="@{/posts/delete/{id}(id=${post.id})}" class="btn">Delete</a>
+    <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="post" >
+        <button class="btn">Delete</button></form>
 </div>
 
 <footer th:replace="partials/foot :: foot" />
