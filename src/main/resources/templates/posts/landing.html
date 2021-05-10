@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <head th:replace=" partials/head :: head"/>
+    <link rel="stylesheet" th:href="@{/style.css}">
+
+</head>
+<body class="bg-landing">
+<div>
+
+    <nav th:replace=" partials/nav :: nav"/>
+
+    <div class="container">
+        <h1>The Daily Blog</h1>
+    </div>
+
+    <footer th:include="partials/foot :: foot"/>
+</div>
+</body>
+</html>

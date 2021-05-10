@@ -1,0 +1,16 @@
+
+.bg-landing {
+    background-image: url("img/landing_bg.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bg-login {
+    background-image: url("img/login.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

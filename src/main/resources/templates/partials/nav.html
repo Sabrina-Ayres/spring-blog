@@ -30,7 +30,7 @@
                 </form>
             </li>
             <li sec:authorize="isAnonymous()">
-                <form th:action="@{/login}" th:method="post" class="form-inline mr-sm-2">
+                <form th:action="@{/login}" th:method="get" class="form-inline mr-sm-2">
                     <button class="nav-link btn">Login</button>
                 </form>
             </li>
