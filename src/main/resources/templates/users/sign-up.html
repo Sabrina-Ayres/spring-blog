@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Sign up</title>
-    <head th:replace=" partials/head :: head" />
+    <head th:replace=" partials/head :: head"/>
+    <link rel="stylesheet" th:href="@{/style.css}">
 
 </head>
 <body>
 
-<nav th:replace=" partials/nav :: nav" />
+<nav th:replace=" partials/nav :: nav"/>
 
-<h1>Create an account</h1>
-<form th:action="@{/sign-up}" method="POST" th:object="${user}">
-    <label for="username">Username</label>
-    <input id="username" th:field="*{username}" />
+<div class="bg-signup">
+    <div class="container">
+        <div>
+            <h1 class="login-head">Create an account</h1>
+        </div>
+        <div class="container mb-4">
+            <form th:action="@{/sign-up}" method="POST" th:object="${user}">
+                <!--        <label for="username">Username</label>-->
+                <input id="username" th:field="*{username}" class="form-control mb-4" placeholder="Username"/>
 
-    <label for="email">Email</label>
-    <input id="email" th:field="*{email}" />
+                <!--        <label for="email">Email</label>-->
+                <input id="email" th:field="*{email}" class="form-control mb-4" placeholder="Email"/>
 
-    <label for="password">Password</label>
-    <input id="password" type="password" th:field="*{password}" />
+                <!--        <label for="password">Password</label>-->
+                <input id="password" type="password" th:field="*{password}" class="form-control"
+                       placeholder="Password"/>
 
-    <input value="Sign me up!" type="submit" />
-</form>
+                <input class="btn btn-block blog-btn" value="Let's start bloggin'!" type="submit"/>
+            </form>
+        </div>
+    </div>
+</div>
 
-<footer th:replace="partials/foot :: foot" />
+<footer th:replace="partials/foot :: foot"/>
+
 </body>
 </html>

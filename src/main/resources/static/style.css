@@ -51,6 +51,15 @@ body {
     /*margin-bottom: 4em;*/
 }
 
+.bg-signup {
+    background-image: url("img/signup.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 10em;
+}
+
 .login-head {
     font-family: 'Newsreader', serif;
     color: #1D1D1D;
@@ -77,5 +86,36 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 10em;
+    padding-bottom: 8em;
+}
+
+.bg-show {
+    background-image: url("img/show.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 19em;
+}
+
+.bg-edit {
+    background-image: url("img/style.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 8em;
+}
+
+.bg-create {
+    background-image: url("img/create.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 8em;
+}
+
+.centered {
+    text-align: center;
 }

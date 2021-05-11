@@ -3,28 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <head th:replace=" partials/head :: head" />
+    <head th:replace=" partials/head :: head"/>
+    <link rel="stylesheet" th:href="@{/style.css}">
+
 
 </head>
 <body>
-<nav th:replace=" partials/nav :: nav" />
+<nav th:replace=" partials/nav :: nav"/>
 
+<div class="bg-edit">
+    <div class="container">
+        <div class="login-head">
+            <h1 class="mb-4">Update your post</h1>
+        </div>
 
-<h1 class="mb-4">Update your post</h1>
+        <div class="container mb-4">
+            <form th:action="@{'/posts/edit/' + ${post.id}}" th:method="post" th:object="${post}">
+                <label>Title: </label>
+                <input type="text" th:field="*{title}" class="form-control mb-3"/>
+                <label>Body: </label>
+                <input type="text" th:field="*{body}" class="form-control"/>
 
-<div>
-    <form th:action="@{'/posts/edit/' + ${post.id}}"  th:method="post" th:object="${post}" >
-        <label>Title: </label>
-        <input type="text" th:field="*{title}" />
-        <label>Body: </label>
-        <input type="text" th:field="*{body}" />
-        <button type="submit">Update</button>
-<!--        <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="post">-->
-<!--            <button class="btn">Delete</button>-->
-<!--        </form>-->
-    </form>
+                <button class="btn btn-block blog-btn" type="submit">Update Blog</button>
+                <!--        <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="post">-->
+                <!--            <button class="btn">Delete</button>-->
+                <!--        </form>-->
+            </form>
+        </div>
+    </div>
 </div>
 
-<footer th:replace="partials/foot :: foot" />
+
+<footer th:replace="partials/foot :: foot"/>
 </body>
 </html>
