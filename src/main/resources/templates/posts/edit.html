@@ -19,6 +19,9 @@
         <label>Body: </label>
         <input type="text" th:field="*{body}" />
         <button type="submit">Update</button>
+<!--        <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="post">-->
+<!--            <button class="btn">Delete</button>-->
+<!--        </form>-->
     </form>
 </div>
 

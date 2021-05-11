@@ -9,6 +9,20 @@ body {
     font-size: 1.3em;
 }
 
+.nav-it {
+    font-family: 'Montserrat', sans-serif;
+    color: #1D1D1D;
+    font-size: .8em;
+    margin-left: .2em;
+}
+
+.nav-brand {
+    font-family: 'Newsreader', serif;
+    color: #1D1D1D;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
 .bg-landing {
     background-image: url("img/landing_bg.jpg");
     height: 100%;
@@ -49,6 +63,16 @@ body {
 
 .bg-login {
     background-image: url("img/login.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 10em;
+}
+
+
+.bg-index {
+    background-image: url("img/index-bg.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;

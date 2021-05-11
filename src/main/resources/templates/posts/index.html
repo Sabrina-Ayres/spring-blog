@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <head th:replace=" partials/head :: head" />
+    <head th:replace=" partials/head :: head"/>
+    <link rel="stylesheet" th:href="@{/style.css}">
 
 </head>
 <body>
-<nav th:replace=" partials/nav :: nav" />
+<nav th:replace=" partials/nav :: nav"/>
+<div class="bg-index">
+    <div>
+        <div>
+            <h1 class="mb-4">Post</h1>
+        </div>
+        <div th:each="post : ${posts}">
+            <h3 th:text="${post.title}"/>
+            <p th:text="${post.body}"/>
+            <a th:href="@{/posts/edit/{id}(id=${post.id})}" class="btn">Edit</a>
+            <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="post">
+                <button class="btn">Delete</button>
+            </form>
+<!--            <a th:href="@{/posts/{id}(id=${post.id})}" class="btn">View More</a>-->
 
-
-<h1 class="mb-4">Post</h1>
-<div th:each="post : ${posts}">
-    <h3 th:text="${post.title}" />
-    <p th:text="${post.body}" />
-    <a th:href="@{/posts/edit/{id}(id=${post.id})}" class="btn">Edit</a>
-    <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="post" >
-        <button class="btn">Delete</button></form>
+        </div>
+    </div>
 </div>
-
-<footer th:replace="partials/foot :: foot" />
+<footer th:replace="partials/foot :: foot"/>
 </body>
 </html>
