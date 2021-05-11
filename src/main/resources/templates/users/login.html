@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Log In</title>
 
     <head th:replace=" partials/head :: head"/>
     <link rel="stylesheet" th:href="@{/style.css}">
 
 </head>
-<body class="bg-login">
+<body>
+
+<div class="bg-login">
 
 <nav th:replace=" partials/nav :: nav"/>
 
-<h1>Log In</h1>
-<div th:if="${param.error}">
-    Invalid Username and Password.
+    <div class="container">
+        <div>
+            <h1 class="login-head">Log In To Get Bloggin'</h1>
+        </div>
+        <div>
+            <div th:if="${param.error}">
+                Invalid Username and Password.
+            </div>
+            <div th:if="${param.logout}">
+                You have been logged out.
+            </div>
+        </div>
+        <div class="container mb-4">
+            <form th:action="@{/login}" method="post">
+                <div>
+                <label for="username">Username</label>
+                <input id="username" name="username" class="form-control" type="text"/>
+                </div>
+                <div>
+                <label for="password">Password</label>
+                <input id="password" name="password" class="form-control" type="password"/>
+                </div>
+                <div>
+                <input class="btn btn-block blog-btn" type="submit" value="Log In"/>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
-
-<form th:action="@{/login}" method="post">
-    <label for="username">Username</label>
-    <input id="username" name="username" type="text" />
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" />
-    <input type="submit" value="Log In" />
-</form>
-
 <footer th:include="partials/foot :: foot"/>
+
 </body>
 </html>
