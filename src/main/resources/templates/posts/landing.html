@@ -9,13 +9,20 @@
 </head>
 <body>
 
-<nav th:replace=" partials/nav :: nav"/>
+<!--<nav th:replace=" partials/nav :: nav"/>-->
 
 <div class="bg-landing">
     <div class="container">
         <div class="container">
-            <h1 class="landing-head">The Daily Blog</h1>
+            <h1 class="landing-head mb-4">The Daily Blog</h1>
         </div>
+
+        <a th:href="@{/login}" class="btn blog-btn-dos btn-block">Login</a>
+
+        <a th:href="@{/sign-up}" class="btn blog-btn-dos btn-block">Register</a>
+
+        <a th:href="@{/posts}" class="btn blog-btn-dos btn-block">View Current Posts</a>
+
     </div>
 </div>
 
