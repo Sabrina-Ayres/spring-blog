@@ -10,9 +10,9 @@
 </head>
 <body>
 
-<div class="bg-login">
-
 <nav th:replace=" partials/nav :: nav"/>
+
+<div class="bg-login">
 
     <div class="container">
         <div>
@@ -28,13 +28,13 @@
         </div>
         <div class="container mb-4">
             <form th:action="@{/login}" method="post">
-                <div>
-                <label for="username">Username</label>
-                <input id="username" name="username" class="form-control" type="text"/>
+                <div class="mb-3">
+<!--                <label for="username">Username</label>-->
+                <input id="username" name="username" class="form-control" placeholder="Username" type="text"/>
                 </div>
                 <div>
-                <label for="password">Password</label>
-                <input id="password" name="password" class="form-control" type="password"/>
+<!--                <label for="password">Password</label>-->
+                <input id="password" name="password" class="form-control" placeholder="Password" type="password"/>
                 </div>
                 <div>
                 <input class="btn btn-block blog-btn" type="submit" value="Log In"/>
@@ -43,6 +43,7 @@
         </div>
     </div>
 </div>
+
 <footer th:include="partials/foot :: foot"/>
 
 </body>

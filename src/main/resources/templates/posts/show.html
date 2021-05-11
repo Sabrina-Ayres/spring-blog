@@ -7,13 +7,15 @@
 
 </head>
 <body>
+
 <nav th:replace=" partials/nav :: nav" />
 
 <h1>Blog</h1>
+
 <div>
     <h3 th:text="${post.title}" />
     <p th:text="${post.body}" />
-    <p th:text="${post.user.email}" />
+<!--    <p th:text="${post.user.email}" />-->
 </div>
 
 <footer th:replace="partials/foot :: foot" />

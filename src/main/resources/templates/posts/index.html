@@ -8,24 +8,35 @@
 
 </head>
 <body>
+
 <nav th:replace=" partials/nav :: nav"/>
+
 <div class="bg-index">
     <div>
         <div>
-            <h1 class="mb-4">Post</h1>
+            <h1 class="mb-4">Posts</h1>
         </div>
-        <div th:each="post : ${posts}">
-            <h3 th:text="${post.title}"/>
-            <p th:text="${post.body}"/>
-            <a th:href="@{/posts/edit/{id}(id=${post.id})}" class="btn">Edit</a>
-            <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="post">
-                <button class="btn">Delete</button>
-            </form>
-<!--            <a th:href="@{/posts/{id}(id=${post.id})}" class="btn">View More</a>-->
-
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6" th:each="post : ${posts}">
+                    <div class="card-body">
+                        <h3 th:text="${post.title}"/>
+                        <p th:text="${post.body}"/>
+                        <div class="row">
+                            <a th:href="@{/posts/edit/{id}(id=${post.id})}" class="btn">Edit</a>
+                            <form th:action="@{/posts/delete/{id}(id=${post.id})}" th:method="post">
+                                <button class="btn">Delete</button>
+                            </form>
+                            <!--            <a th:href="@{/posts/{id}(id=${post.id})}" class="btn">View More</a>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 <footer th:replace="partials/foot :: foot"/>
+
 </body>
 </html>
