@@ -38,14 +38,14 @@ public class PostController {
     public String getOnepost(@PathVariable long id, Model model) {
         Post post = new Post();
         model.addAttribute("post", postsDao.getOne(id));
-        return "/posts/show";
+        return "posts/show";
     }
 
 
     @GetMapping("/posts/create")
     public String createPostForm(Model model) {
         model.addAttribute("post", new Post());
-        return "/posts/create";
+        return "posts/create";
     }
 
 
